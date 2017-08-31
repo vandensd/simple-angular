@@ -1,0 +1,17 @@
+<h3>Add Project</h3>
+
+<form (ngSubmit)="onSubmit()" #projectForm="ngForm">
+  <div>
+    <label>Title</label>
+    <input type="text" [(ngModel)]="project.name" name="name" #name="ngModel">
+  </div>
+  <div>
+    <label>Category</label>
+    <select name="category" [(ngModel)]="project.category" #category="ngModel">
+      <option *ngFor="let category of categories" [value]="category">{{category}}</option>
+    </select>
+  </div>
+  <br>
+  <input type="submit" value="submit">
+  <br>
+</form>
