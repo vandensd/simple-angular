@@ -14,4 +14,8 @@ export class ProjectsComponent implements OnInit {
   ngOnInit() {
   }
 
+  deleteProject(index: number) {
+    this.projects.splice(index, 1);
+  }
+
 }

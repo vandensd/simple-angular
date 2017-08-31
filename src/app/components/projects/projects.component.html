@@ -1,2 +1,2 @@
 <h3>Latest Projects</h3>
-<app-projectitem *ngFor="let project of projects" [project]="project"></app-projectitem>
+<app-projectitem *ngFor="let project of projects; let i = index" [project]="project" (deleteProject)="deleteProject(i)"></app-projectitem>

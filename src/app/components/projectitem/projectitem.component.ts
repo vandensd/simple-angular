@@ -1,4 +1,4 @@
-import { Component, OnInit, Input } from '@angular/core';
+import { Component, OnInit, Input, Output, EventEmitter } from '@angular/core';
 import { Project } from '../../model/project';
 
 @Component({
@@ -13,10 +13,16 @@ export class ProjectitemComponent implements OnInit {
     name: '',
     category: ''
   };
+  @Output() deleteProject = new EventEmitter<boolean>();
+  @Input() index: number;
 
   constructor() { }
 
   ngOnInit() {
+  }
+
+  onDeleteProject() {
+    this.deleteProject.emit(true);
   }
 
 }
